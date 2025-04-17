@@ -1,0 +1,22 @@
+Target dependency graph (8 targets)
+Target 'Runner' in project 'Runner'
+➜ Explicit dependency on target 'Flutter Assemble' in project 'Runner'
+➜ Implicit dependency on target 'Pods-Runner' in project 'Pods' via file 'Pods_Runner.framework' in build phase 'Link Binary'
+➜ Implicit dependency on target 'geolocator_apple' in project 'Pods' via options '-framework geolocator_apple' in build setting 'OTHER_LDFLAGS'
+➜ Implicit dependency on target 'video_player_avfoundation' in project 'Pods' via options '-framework video_player_avfoundation' in build setting 'OTHER_LDFLAGS'
+Target 'Pods-Runner' in project 'Pods'
+➜ Explicit dependency on target 'FlutterMacOS' in project 'Pods'
+➜ Explicit dependency on target 'geolocator_apple' in project 'Pods'
+➜ Explicit dependency on target 'video_player_avfoundation' in project 'Pods'
+Target 'Flutter Assemble' in project 'Runner'
+➜ Implicit dependency on target 'geolocator_apple' in project 'Pods' via options '-framework geolocator_apple' in build setting 'OTHER_LDFLAGS'
+➜ Implicit dependency on target 'video_player_avfoundation' in project 'Pods' via options '-framework video_player_avfoundation' in build setting 'OTHER_LDFLAGS'
+Target 'video_player_avfoundation' in project 'Pods'
+➜ Explicit dependency on target 'FlutterMacOS' in project 'Pods'
+➜ Explicit dependency on target 'video_player_avfoundation-video_player_avfoundation_privacy' in project 'Pods'
+Target 'video_player_avfoundation-video_player_avfoundation_privacy' in project 'Pods' (no dependencies)
+Target 'geolocator_apple' in project 'Pods'
+➜ Explicit dependency on target 'FlutterMacOS' in project 'Pods'
+➜ Explicit dependency on target 'geolocator_apple-geolocator_apple_privacy' in project 'Pods'
+Target 'geolocator_apple-geolocator_apple_privacy' in project 'Pods' (no dependencies)
+Target 'FlutterMacOS' in project 'Pods' (no dependencies)
