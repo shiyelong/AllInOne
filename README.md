@@ -80,6 +80,39 @@ backend/
 
 ---
 
+## 初始化前端和后端
+
+### 前端初始化
+1. 确保已安装 Flutter 环境。
+2. 在终端中运行以下命令以创建前端项目：
+   ```bash
+   flutter create frontend
+   ```
+3. 进入 `frontend` 目录后，运行以下命令以安装依赖：
+   ```bash
+   cd frontend
+   flutter pub get
+   ```
+
+### 后端初始化
+1. 确保已安装 Go 环境。
+2. 在终端中运行以下命令以创建后端项目目录：
+   ```bash
+   mkdir backend
+   cd backend
+   go mod init allinone-backend
+   ```
+3. 创建必要的目录结构：
+   ```bash
+   mkdir cmd controllers models repositories routes utils config
+   ```
+4. 在 `backend` 目录中运行以下命令以安装依赖：
+   ```bash
+   go get
+   ```
+
+---
+
 ## 模块整合设计与导航方案
 
 ### 1. 全局导航设计

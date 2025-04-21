@@ -1,0 +1,87 @@
+{
+  "app_name": "AllInOne",
+  
+  "login": "ログイン",
+  "register": "登録",
+  "welcome_back": "おかえりなさい",
+  "login_your_account": "アカウントにログイン",
+  "create_account": "アカウント作成",
+  "register_new_account": "新しいアカウントを登録",
+  
+  "phone_login": "携帯電話ログイン",
+  "account_login": "アカウントログイン",
+  "phone": "携帯電話",
+  "email": "メール",
+  
+  "password": "パスワード",
+  "confirm_password": "パスワード確認",
+  "verification_code": "確認コード",
+  "get_verification_code": "コード取得",
+  "please_enter_phone": "携帯電話番号を入力してください",
+  "please_enter_email": "メールアドレスを入力してください",
+  "please_enter_account": "アカウント/メール/電話番号を入力してください",
+  "please_enter_password": "パスワードを入力してください",
+  "please_confirm_password": "パスワードを再入力してください",
+  "please_enter_verification_code": "確認コードを入力してください",
+  
+  "password_length_error": "パスワードは6文字以上必要です",
+  "passwords_not_match": "パスワードが一致しません",
+  "verification_code_length_error": "確認コードの長さが無効です",
+  
+  "forgot_password": "パスワードをお忘れですか？",
+  "qr_code_login": "QRコードログイン",
+  "password_login": "パスワードログイン",
+  "scan_qr_login": "QRコードをスキャン",
+  "use_mobile_scan": "モバイルデバイスでスキャンして安全にログイン",
+  "refresh_qr_code": "QRコードを更新",
+  "qr_code_expired": "QRコードの有効期限が切れました、更新してください",
+  "generate_qr_code": "QRコードを生成",
+  
+  "scan_success": "スキャン成功！",
+  "confirm_on_mobile": "モバイルデバイスでログインを確認してください",
+  
+  "other_login_methods": "他のログイン方法",
+  "wechat": "WeChat",
+  "qq": "QQ",
+  "weibo": "Weibo",
+  "github": "GitHub",
+  "google": "Google",
+  
+  "login_success": "ログイン成功、おかえりなさい！",
+  "register_success": "登録成功、ようこそ！",
+  "register_then_login": "登録成功、ログインしています...",
+  "register_manually_login": "登録成功、手動でログインしてください",
+  
+  "need_verification_code": "まず確認コードを取得してください",
+  "verification_sent": "確認コードが{destination}に送信されました、ご確認ください",
+  "phone_destination": "携帯電話",
+  "email_destination": "メール",
+  
+  "human_verification": "人間確認",
+  "ensure_account_security": "アカウントセキュリティのため、確認を完了してください",
+  "captcha_case_insensitive": "大文字と小文字は区別されません",
+  "captcha_error": "キャプチャエラー",
+  "loading_captcha": "キャプチャを読み込み中...",
+  "please_enter_captcha": "キャプチャを入力してください",
+  
+  "cancel": "キャンセル",
+  "confirm": "確認",
+  "next": "次へ",
+  "back": "戻る",
+  "submit": "送信",
+  
+  "any_problems": "問題がありますか？",
+  "contact_customer_service": "サポートに連絡",
+  "customer_service_email": "サポートにお問い合わせください：support@example.com",
+  
+  "feature_developing": "{feature}機能は開発中です、お待ちください",
+  
+  "language_settings": "言語設定",
+  "follow_system_language": "システム言語に従う",
+  "follow_system_language_desc": "デバイスのシステム言語を自動的に使用",
+  "current_system_language": "現在のシステム言語：",
+  
+  "select_country_region": "国/地域を選択",
+  "search": "検索",
+  "no_matching_country": "一致する国/地域が見つかりません"
+}

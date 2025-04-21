@@ -1,0 +1,78 @@
+name: frontend
+
+environment:
+  sdk: '^3.7.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # HTTP and API
+  http: ^1.0.0
+  dio: ^5.0.0
+  web_socket_channel: ^2.4.0
+  
+  # State Management
+  provider: ^6.0.0
+  flutter_bloc: ^8.0.0
+  
+  # UI Components
+  flutter_svg: ^2.0.0
+  cached_network_image: ^3.3.0
+  video_player: ^2.8.2
+  chewie: ^1.7.0
+  flutter_secure_storage: ^9.0.0
+  qr_flutter: ^4.1.0
+  
+  # Maps and Location
+  google_maps_flutter: ^2.5.0
+  geolocator: ^10.0.0
+  
+  # Charts and Analytics
+  syncfusion_flutter_charts: ^29.1.38
+  fl_chart: ^0.65.0
+  
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+  
+  # Firebase
+  firebase_core: ^2.24.0
+  firebase_messaging: ^14.7.0
+  firebase_analytics: ^10.7.0
+  
+  # WebView
+  webview_flutter: ^4.4.0
+  
+  # Payment
+  flutter_stripe: ^10.0.0
+  
+  # File Handling
+  path_provider: ^2.1.0
+  file_picker: ^10.1.2
+  
+  # Utils
+  shared_preferences: ^2.2.0
+  uuid: ^4.0.0
+  crypto: ^3.0.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+# Flutter settings
+flutter:
+  uses-material-design: true
+  
+  # 添加资源文件
+  assets:
+    - assets/
+    - assets/imgs/logo.png
+    - assets/videos/
+    - assets/videos/background.mp4
+    - assets/i18n/

@@ -1,0 +1,13 @@
+diff --git a/darwin/webview_flutter_wkwebview/Sources/webview_flutter_wkwebview/HTTPCookieProxyAPIDelegate.swift b/darwin/webview_flutter_wkwebview/Sources/webview_flutter_wkwebview/HTTPCookieProxyAPIDelegate.swift
+index 1234567..8901234 100644
+--- a/darwin/webview_flutter_wkwebview/Sources/webview_flutter_wkwebview/HTTPCookieProxyAPIDelegate.swift
++++ b/darwin/webview_flutter_wkwebview/Sources/webview_flutter_wkwebview/HTTPCookieProxyAPIDelegate.swift
+@@ -14,7 +14,7 @@ final class HTTPCookieProxyAPIDelegate: NSObject, FLTHTTPCookieProxyAPIDelegate
+       return PigeonMapToCookieProperties(map!)
+     } catch {
+       let properties = (error as NSError).userInfo
+-      let keyValueTuples = try! properties.map<[(HTTPCookiePropertyKey, Any)], PigeonError> {
++      let keyValueTuples: [(HTTPCookiePropertyKey, Any)] = try! properties.map {
+         guard let key = $0.key as? String else {
+           throw PigeonError.invalidCookiePropertyForKey
+         }
