@@ -16,22 +16,7 @@ class ThirdPartyLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          child: Row(
-            children: [
-              const Expanded(child: Divider(color: Colors.white70)),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  'other_login_methods'.tr(context), 
-                  style: const TextStyle(color: Colors.white70)
-                ),
-              ),
-              const Expanded(child: Divider(color: Colors.white70)),
-            ],
-          ),
-        ),
+       
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: platforms.map((platform) {
