@@ -1,36 +1,35 @@
 package utils
 
 import (
-	"context"
-	"math/rand"
-	"strconv"
-	"time"
+    "context"
+    "math/rand"
+    "strconv"
+    "time"
 
-	"github.com/go-redis/redis/v8"
+    "github.com/go-redis/redis/v8"
 )
 
-var ctx = context.Background()
-
-// GenerateVerifyCode 生成指定长度的数字验证码
+// GenerateVerifyCode generates a numeric verification code of given length
 func GenerateVerifyCode(length int) string {
-	rand.Seed(time.Now().UnixNano())
-	code := ""
-	for i := 0; i < length; i++ {
-		code += strconv.Itoa(rand.Intn(10))
-	}
-	return code
+    rand.Seed(time.Now().UnixNano())
+    code := ""
+    for i := 0; i < length; i++ {
+        code += strconv.Itoa(rand.Intn(10))
+    }
+    return code
 }
 
-// SetVerifyCode 存储验证码到 Redis
+// SetVerifyCode stores the verification code in Redis with expiration
 func SetVerifyCode(rdb *redis.Client, key, code string, expire time.Duration) error {
-	return rdb.Set(ctx, key, code, expire).Err()
+    return rdb.Set(context.Background(), key, code, expire).Err()
 }
 
-// CheckVerifyCode 校验验证码
+// CheckVerifyCode validates the verification code and deletes it on success
 func CheckVerifyCode(rdb *redis.Client, key, code string) bool {
-	val, err := rdb.Get(ctx, key).Result()
-	if err != nil {
-		return false
-	}
-	return val == code
+    val, err := rdb.Get(context.Background(), key).Result()
+    if err != nil || val != code {
+        return false
+    }
+    rdb.Del(context.Background(), key)
+    return true
 }

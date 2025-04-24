@@ -6,7 +6,7 @@ dependencies: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
   /Users/yelong/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.7.1/darwin/video_player_avfoundation/Sources/video_player_avfoundation/./include/video_player_avfoundation/FVPTextureBasedVideoPlayer.h \
   /Users/yelong/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.7.1/darwin/video_player_avfoundation/Sources/video_player_avfoundation/./include/video_player_avfoundation/FVPDisplayLink.h \
-  /Users/yelong/code/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.xcframework/macos-arm64_x86_64/FlutterMacOS.framework/Modules/module.modulemap \
+  /opt/homebrew/Caskroom/flutter/3.29.3/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.xcframework/macos-arm64_x86_64/FlutterMacOS.framework/Modules/module.modulemap \
   /Users/yelong/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.7.1/darwin/video_player_avfoundation/Sources/video_player_avfoundation/./include/video_player_avfoundation/FVPFrameUpdater.h \
   /Users/yelong/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.7.1/darwin/video_player_avfoundation/Sources/video_player_avfoundation/./include/video_player_avfoundation/FVPVideoPlayer.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AVFoundation.framework/Modules/module.modulemap \

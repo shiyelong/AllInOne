@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"allinone-backend/config"
-	"allinone-backend/routes"
+	"AllInOne/backend/config"
+	"AllInOne/backend/routes"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -50,6 +50,8 @@ func main() {
 			"status": "ok",
 		})
 	})
+
+	log.Println("登录注册服务已初始化完成")
 
 	// 启动服务器
 	port := os.Getenv("PORT")

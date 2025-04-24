@@ -449,68 +449,8 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                           ),
                         );
                       } else if (accountType == 'register') {
-                        // 注册页面验证码
-                        return AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOutCubic,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10.0), // 减小间距
-                                child: Text(
-                                  'verification_codes'.tr(context),
-                                  style: const TextStyle(
-                                    fontSize: 16, 
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              
-                              // 手机验证码
-                              ValueListenableBuilder<bool>(
-                                valueListenable: _controller.isSendingPhoneCode,
-                                builder: (context, isSending, _) {
-                                  return ValueListenableBuilder<int>(
-                                    valueListenable: _controller.phoneCodeCountdown,
-                                    builder: (context, countdown, _) {
-                                      return VerificationCodeInputField(
-                                        controller: _controller.phoneCodeController,
-                                        isSending: isSending,
-                                        countdown: countdown,
-                                        onSendCode: () => _controller.sendPhoneCode(),
-                                        labelText: 'phone_verification_code'.tr(context),
-                                        hintText: 'please_enter_phone_code'.tr(context),
-                                      );
-                                    },
-                                  );
-                                },
-                              ),
-                              const SizedBox(height: 8), // 减小间距
-                              
-                              // 邮箱验证码
-                              ValueListenableBuilder<bool>(
-                                valueListenable: _controller.isSendingEmailCode,
-                                builder: (context, isSending, _) {
-                                  return ValueListenableBuilder<int>(
-                                    valueListenable: _controller.emailCodeCountdown,
-                                    builder: (context, countdown, _) {
-                                      return VerificationCodeInputField(
-                                        controller: _controller.emailCodeController,
-                                        isSending: isSending,
-                                        countdown: countdown,
-                                        onSendCode: () => _controller.sendEmailCode(),
-                                        labelText: 'email_verification_code'.tr(context),
-                                        hintText: 'please_enter_email_code'.tr(context),
-                                      );
-                                    },
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        );
+                        // 注册时不需要验证码输入
+                        return const SizedBox.shrink();
                       }
                       
                       // 账号登录模式下不显示验证码输入框

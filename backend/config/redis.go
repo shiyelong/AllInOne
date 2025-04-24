@@ -9,30 +9,23 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// RDB is the global Redis client
 var RDB *redis.Client
 
+// InitRedis loads environment variables and initializes Redis client
 func InitRedis() error {
-	if err := godotenv.Load(); err != nil {
-		return err
+	godotenv.Load()
+	addr := os.Getenv("REDIS_URL")
+	if addr == "" {
+		addr = "localhost:6379"
 	}
-
-	redisURL := os.Getenv("REDIS_URL")
-	if redisURL == "" {
-		redisURL = "localhost:6379"
-	}
-
 	RDB = redis.NewClient(&redis.Options{
-		Addr:         redisURL,
-		Password:     os.Getenv("REDIS_PASSWORD"),
-		DB:           0,
-		DialTimeout:  10 * time.Second,
-		ReadTimeout:  30 * time.Second,
-		WriteTimeout: 30 * time.Second,
-		PoolSize:     10,
-		PoolTimeout:  30 * time.Second,
+		Addr:     addr,
+		Password: os.Getenv("REDIS_PASSWORD"),
+		DB:       0,
 	})
-
-	ctx := context.Background()
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
 	_, err := RDB.Ping(ctx).Result()
 	return err
 }
