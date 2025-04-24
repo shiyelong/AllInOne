@@ -50,15 +50,13 @@ class AuthProvider extends ChangeNotifier {
   Future<bool> login({
     required String type,
     required String account,
-    String? code,
-    String? password,
+    required String password,
   }) async {
     _setLoading(true);
     try {
       final data = await AuthService.login(
         type: type,
         account: account,
-        code: code,
         password: password,
       );
       

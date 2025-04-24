@@ -367,3 +367,87 @@ class VerificationCodeInputField extends StatelessWidget {
     );
   }
 }
+
+/// 认证输入字段组件
+class AuthInputFields extends StatelessWidget {
+  final String loginType;
+  final String accountType;
+  final TextEditingController accountController;
+  final TextEditingController passwordController;
+  final TextEditingController confirmPasswordController;
+  final bool obscurePassword;
+  final bool obscureConfirmPassword;
+  final VoidCallback togglePasswordVisibility;
+  final VoidCallback toggleConfirmPasswordVisibility;
+  // 暂时注释掉验证码相关参数
+  // final TextEditingController codeController;
+  // final int countdown;
+  // final bool isSendingCode;
+  // final VoidCallback onSendCode;
+  // 暂时注释掉手机号相关参数
+  // final String countryCode;
+  // final VoidCallback onSelectCountryCode;
+
+  const AuthInputFields({
+    Key? key,
+    required this.loginType,
+    required this.accountType,
+    required this.accountController,
+    required this.passwordController,
+    required this.confirmPasswordController,
+    required this.obscurePassword,
+    required this.obscureConfirmPassword,
+    required this.togglePasswordVisibility,
+    required this.toggleConfirmPasswordVisibility,
+    // 暂时注释掉验证码相关参数
+    // required this.codeController,
+    // required this.countdown,
+    // required this.isSendingCode,
+    // required this.onSendCode,
+    // 暂时注释掉手机号相关参数
+    // required this.countryCode,
+    // required this.onSelectCountryCode,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // 账号输入框
+        if (loginType == 'email')
+          EmailInputField(controller: accountController),
+        if (loginType == 'account')
+          AccountInputField(controller: accountController),
+        const SizedBox(height: 16),
+
+        // 密码输入框
+        PasswordInputField(
+          controller: passwordController,
+          obscureText: obscurePassword,
+          onToggleVisibility: togglePasswordVisibility,
+        ),
+        const SizedBox(height: 16),
+
+        // 确认密码输入框（仅注册时显示）
+        if (accountType == 'register')
+          PasswordInputField(
+            controller: confirmPasswordController,
+            obscureText: obscureConfirmPassword,
+            labelText: 'confirm_password',
+            hintText: 'please_confirm_password',
+            onToggleVisibility: toggleConfirmPasswordVisibility,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'please_confirm_password'.tr(context);
+              }
+              if (value != passwordController.text) {
+                return 'password_not_match'.tr(context);
+              }
+              return null;
+            },
+          ),
+        if (accountType == 'register') const SizedBox(height: 16),
+      ],
+    );
+  }
+}

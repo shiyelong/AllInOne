@@ -477,4 +477,18 @@ class LoginController {
   void navigateToForgotPassword() {
     Navigator.pushNamed(context, '/forgot-password');
   }
+}     SnackBar(
+        content: Text('login_success'.tr(context)),
+        backgroundColor: Colors.green,
+      ),
+    );
+    
+    // 导航到主页
+    Navigator.pushReplacementNamed(context, '/home');
+  }
+  
+  /// 导航到忘记密码页面
+  void navigateToForgotPassword() {
+    Navigator.pushNamed(context, '/forgot-password');
+  }
 }

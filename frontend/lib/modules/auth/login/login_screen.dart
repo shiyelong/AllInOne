@@ -312,41 +312,44 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                             accountController: _controller.accountController,
                                             passwordController: _controller.passwordController,
                                             confirmPasswordController: _controller.confirmPasswordController,
-                                            codeController: _controller.codeController,
+                                            // 暂时注释掉验证码相关参数
+                                            // codeController: _controller.codeController,
                                             obscurePassword: obscurePassword,
                                             obscureConfirmPassword: obscureConfirmPassword,
                                             togglePasswordVisibility: _controller.togglePasswordVisibility,
                                             toggleConfirmPasswordVisibility: _controller.toggleConfirmPasswordVisibility,
-                                            countryCode: countryCode,
-                                            onSelectCountryCode: () async {
-                                              final result = await showModalBottomSheet<String>(
-                                                context: context,
-                                                backgroundColor: Colors.transparent,
-                                                isScrollControlled: true,
-                                                builder: (context) => ValueListenableBuilder<List<Map<String, dynamic>>>(
-                                                  valueListenable: _controller.countryCodes,
-                                                  builder: (context, countryCodes, _) {
-                                                    return ValueListenableBuilder<bool>(
-                                                      valueListenable: _controller.isLoadingCountryCodes,
-                                                      builder: (context, isLoading, _) {
-                                                        return CountryCodePicker(
-                                                          countryCodes: countryCodes,
-                                                          isLoading: isLoading,
-                                                          currentCode: countryCode,
-                                                          onSelect: (code) => Navigator.pop(context, code),
-                                                        );
-                                                      },
-                                                    );
-                                                  },
-                                                ),
-                                              );
-                                              if (result != null) {
-                                                _controller.countryCode.value = result;
-                                              }
-                                            },
-                                            countdown: countdown,
-                                            isSendingCode: isSendingCode,
-                                            onSendCode: _controller.sendVerificationCode,
+                                            // 暂时注释掉手机号相关参数
+                                            // countryCode: countryCode,
+                                            // onSelectCountryCode: () async {
+                                            //   final result = await showModalBottomSheet<String>(
+                                            //     context: context,
+                                            //     backgroundColor: Colors.transparent,
+                                            //     isScrollControlled: true,
+                                            //     builder: (context) => ValueListenableBuilder<List<Map<String, dynamic>>>(
+                                            //       valueListenable: _controller.countryCodes,
+                                            //       builder: (context, countryCodes, _) {
+                                            //         return ValueListenableBuilder<bool>(
+                                            //           valueListenable: _controller.isLoadingCountryCodes,
+                                            //           builder: (context, isLoading, _) {
+                                            //             return CountryCodePicker(
+                                            //               countryCodes: countryCodes,
+                                            //               isLoading: isLoading,
+                                            //               currentCode: countryCode,
+                                            //               onSelect: (code) => Navigator.pop(context, code),
+                                            //             );
+                                            //           },
+                                            //         );
+                                            //       },
+                                            //     ),
+                                            //   );
+                                            //   if (result != null) {
+                                            //     _controller.countryCode.value = result;
+                                            //   }
+                                            // },
+                                            // 暂时注释掉验证码相关参数
+                                            // countdown: countdown,
+                                            // isSendingCode: isSendingCode,
+                                            // onSendCode: _controller.sendVerificationCode,
                                           );
                                         },
                                       );
@@ -483,6 +486,8 @@ class LoginTypeSwitcher extends StatelessWidget {
               ),
             ),
           ),
+        // 暂时注释掉手机号登录选项
+        /*
         if (showAccountType)
           TextButton(
             onPressed: () => onSwitch('phone'),
@@ -493,6 +498,7 @@ class LoginTypeSwitcher extends StatelessWidget {
               ),
             ),
           ),
+        */
         TextButton(
           onPressed: () => onSwitch('qr'),
           child: Text(
@@ -513,16 +519,18 @@ class AuthInputFields extends StatelessWidget {
   final TextEditingController accountController;
   final TextEditingController passwordController;
   final TextEditingController confirmPasswordController;
-  final TextEditingController codeController;
+  // 暂时注释掉验证码相关参数
+  // final TextEditingController codeController;
   final bool obscurePassword;
   final bool obscureConfirmPassword;
   final VoidCallback togglePasswordVisibility;
   final VoidCallback toggleConfirmPasswordVisibility;
-  final String countryCode;
-  final VoidCallback onSelectCountryCode;
-  final int countdown;
-  final bool isSendingCode;
-  final VoidCallback onSendCode;
+  // 暂时注释掉手机号相关参数
+  // final String countryCode;
+  // final VoidCallback onSelectCountryCode;
+  // final int countdown;
+  // final bool isSendingCode;
+  // final VoidCallback onSendCode;
 
   const AuthInputFields({
     Key? key,
@@ -531,16 +539,18 @@ class AuthInputFields extends StatelessWidget {
     required this.accountController,
     required this.passwordController,
     required this.confirmPasswordController,
-    required this.codeController,
+    // 暂时注释掉验证码相关参数
+    // required this.codeController,
     required this.obscurePassword,
     required this.obscureConfirmPassword,
     required this.togglePasswordVisibility,
     required this.toggleConfirmPasswordVisibility,
-    required this.countryCode,
-    required this.onSelectCountryCode,
-    required this.countdown,
-    required this.isSendingCode,
-    required this.onSendCode,
+    // 暂时注释掉手机号相关参数
+    // required this.countryCode,
+    // required this.onSelectCountryCode,
+    // required this.countdown,
+    // required this.isSendingCode,
+    // required this.onSendCode,
   }) : super(key: key);
 
   @override
